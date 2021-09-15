@@ -18,7 +18,7 @@ class User extends AuthUser
         'phone',
         'status',
     ];
-    
+
     protected $hidden = [
         'password',
     ];
