@@ -1,5 +1,7 @@
 <?php
 
+use App\Services\Localization\LocalizationServiceProvider;
+
 return [
 
     /*
@@ -80,7 +82,8 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
+    'locales' => ['ru', 'en'],
 
     /*
     |--------------------------------------------------------------------------
@@ -175,7 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ModularProvider::class,
-
+        App\Services\Localization\LocalizationServiceProvider::class,
     ],
 
     /*
