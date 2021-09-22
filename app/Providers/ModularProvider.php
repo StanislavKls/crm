@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\Localization\LocalizationService;
 use Route;
 use Illuminate\Support\ServiceProvider;
 
@@ -29,7 +30,7 @@ class ModularProvider extends ServiceProvider
 
         if ($modules) {
             Route::group([
-                'prefix' => '',
+                'prefix' => LocalizationService::locale(),
             ], function () use ($modules, $path) {
                 foreach ($modules as $mod => $submodules) {
                     foreach ($submodules as $key => $sub) {
