@@ -1,4 +1,5 @@
 <?php
+
 return [
     'path' => base_path() . '/app/Modules',
     'base_namespace' => 'App\Modules',
@@ -13,8 +14,9 @@ return [
 
     'modules' => [
         'Admin' => [
+            'Menu',
             'Dashboard',
-            'User'
+              'User'
         ],
 
         'Pub' => [
