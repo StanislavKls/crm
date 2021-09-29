@@ -59,8 +59,28 @@ class Base extends Controller
                 if ($path && $this->checkRoute($path)) {
                     $path = route($path);
                 }
-                dd($path);
+                if ($item->parent == 0) {
+                    $m->add($item->title, $path)->id($item->id)->data('permissions', []);
+                } else {
+                    if ($m->find($item->parent)) {
+                        $m->find($item->parent)->add($item->title, $path)->id($item->id)->data('permissions', []);
+                    }
+                }
             }
+        })
+        ->filter(function ($item) {
+            return true;
         });
+    }
+    private function checkRoute($path)
+    {
+        $routes = \Route::getRoutes()->getRoutes();
+
+        foreach ($routes as $route) {
+            if ($route->getName() == $path) {
+                return true;
+            }
+        }
+        return false;
     }
 }
