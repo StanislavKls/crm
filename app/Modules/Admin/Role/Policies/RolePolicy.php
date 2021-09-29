@@ -22,4 +22,16 @@ class RolePolicy
     {
         return true;
     }
+    public function create()
+    {
+        return true;
+    }
+    public function edit()
+    {
+        return true;
+    }
+    public function delete()
+    {
+        return true;
+    }
 }
