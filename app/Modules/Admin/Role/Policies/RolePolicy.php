@@ -18,20 +18,23 @@ class RolePolicy
     {
         //
     }
-    public function view()
+    public function view(User $user)
     {
-        return true;
+        return $user->canDo(['SUPER_ADMINISTRATOR','ROLES_ACCESS']);
     }
-    public function create()
+
+    public function create(User $user)
     {
-        return true;
+        return $user->canDo(['SUPER_ADMINISTRATOR','ROLES_ACCESS']);
     }
-    public function edit()
+
+    public function edit(User $user)
     {
-        return true;
+        return $user->canDo(['SUPER_ADMINISTRATOR','ROLES_ACCESS']);
     }
-    public function delete()
+
+    public function delete(User $user)
     {
-        return true;
+        return $user->canDo(['SUPER_ADMINISTRATOR','ROLES_ACCESS']);
     }
 }
