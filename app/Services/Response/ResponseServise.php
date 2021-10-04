@@ -2,7 +2,7 @@
 
 namespace App\Services\Response;
 
-class ResponseService
+class ResponseServise
 {
     private static function responseParams($status, $errors = [], $data = [])
     {
